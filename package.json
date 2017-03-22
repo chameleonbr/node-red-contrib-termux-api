@@ -1,0 +1,33 @@
+{
+  "name": "node-red-contrib-termux-api",
+  "version": "0.0.1",
+  "description": "Node Red flows to call termux api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chameleonbr/node-red-contrib-termux-api.git"
+  },
+  "keywords": [
+    "termux",
+    "node-red",
+    "nodered",
+    "android"
+  ],
+  "node-red":{
+    "nodes":{
+	"termux": "index.js"
+    }
+  },
+  "author": "Andre Avila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chameleonbr/node-red-contrib-termux-api/issues"
+  },
+  "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme",
+  "dependencies": {
+    "termux-api": "0.0.1"
+  }
+}
