@@ -1,0 +1,1041 @@
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-battery-status', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Battery Status",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Battery Status";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-battery-status">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-battery-status">
+    <p>Battery Status</p>
+    <p>Get Battery Status from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-camera-info', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Camera Info",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Camera Info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-camera-info">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-camera-info">
+    <p>Camera Info</p>
+    <p>Get Camera info from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-clipboard-get', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Clipboard Get",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Clipboard Get";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-clipboard-get">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-clipboard-get">
+    <p>Clipboard Get</p>
+    <p>Get Clipboard data from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-contact-list', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Contact List",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Contact List";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-contact-list">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-contact-list">
+    <p>Contact List</p>
+    <p>Get Contact List from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-telephony-cellinfo', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Telephony Cell Info",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Tel Cell Info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-telephony-cellinfo">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-telephony-cellinfo">
+    <p>Tel Cell Info</p>
+    <p>Get Telephony Cell Info from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-telephony-deviceinfo', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Telephony Device Info",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Tel Device Info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-telephony-deviceinfo">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-telephony-deviceinfo">
+    <p>Tel Device Info</p>
+    <p>Get Device Info from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-tts-engines', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "TTS Engines",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "TTS Engines";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-tts-engines">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-tts-engines">
+    <p>TTS Engines</p>
+    <p>Get TTS Engines from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-camera-photo', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Camera Photo",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            cameraid: {
+                value: 0,
+                validate: RED.validators.number()
+            }
+        },
+        oneditprepare: function() {
+          $("#node-input-keyval").spinner({
+                min: 0
+          });
+        },
+        label: function() {
+            return this.name || "Camera Photo";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-camera-photo">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-cameraid"><i class="fa fa-random"></i> Camera ID</label>
+        <input id="node-input-cameraid" style="width: 60px; height: 1.7em;" value="0">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-tts-engines">
+    <p>Camera Photo</p>
+    <p>Get Photo from android camera.</p>
+    <p></p>
+</script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-clipboard-set', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Clipboard Set",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Clipboard Set";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-clipboard-set">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-clipboard-set">
+    <p>Clipboard Set</p>
+    <p>Set Clipboard to android using msg.payload.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-dialog', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Dialog",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            hint: {
+                value: ""
+            },
+            title: {
+                value: ""
+            },
+            textarea: {
+                value: false
+            },
+            password: {
+                value: false
+            }
+        },
+        label: function() {
+            return this.name || "Dialog";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-dialog">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-hint"><i class="icon-tasks"></i> Hint</label>
+        <input type="text" id="node-input-hint" placeholder="Hint">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="icon-tasks"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title">
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-textarea" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-textarea" style="width: 70%;">Textarea</label>
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-password" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-password" style="width: 70%;">Password</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-dialog">
+    <p>Dialog</p>
+    <p>Set Dialog to android and return user response.</p>
+    <p></p>
+</script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-download', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Download",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            description: {
+                value: ""
+            },
+            title: {
+                value: ""
+            },
+            url: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Download";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-download">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-description"><i class="icon-tasks"></i> Description</label>
+        <input type="text" id="node-input-description" placeholder="Hint">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="icon-tasks"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-tasks"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="URL">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-download">
+    <p>Download</p>
+    <p>Download file using Android Donload Applicaction.</p>
+    <p>If send msg.url, msg.title or msg.description, overrides default configuration.</p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-location', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Location",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            provider: {
+                value: "gps"
+            },
+            request: {
+                value: "once"
+            }
+        },
+        label: function() {
+            return this.name || "Location";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-location">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-provider"><i class="fa fa-unlock"></i> Provider</label>
+        <select id="node-input-provider">
+            <option value="gps" selected>GPS</option>
+            <option value="network">Network</option>
+            <option value="passive">Passive</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-request"><i class="fa fa-unlock"></i> Request</label>
+        <select id="node-input-request">
+            <option value="once" selected>Once</option>
+            <option value="last">Last</option>
+            <option value="updates">Updates</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-location">
+    <p>Location</p>
+    <p>Get Location from android.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-notification', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Notification",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            nid: {
+                value: ""
+            },
+            title: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },
+            content: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Notification";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-notification">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-nid"><i class="fa fa-tag"></i> ID</label>
+        <input type="text" id="node-input-nid" placeholder="ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="icon-tasks"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-tag"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="URL">
+    </div>
+    <div class="form-row">
+        <label for="node-input-content"><i class="icon-tasks"></i> Content</label>
+        <input type="text" id="node-input-content" placeholder="Content">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-notification">
+    <p>Notification</p>
+    <p>Send Notification to android.</p>
+    <p></p>
+</script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-tts-speak', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "TTS Speak",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            engine: {
+                value: ""
+            },
+            language: {
+                value: ""
+            },
+            pitch: {
+                value: 1.0,
+                validate: RED.validators.number()
+            },
+            rate: {
+                value: 1.0,
+                validate: RED.validators.number()
+            },
+            stream: {
+                value: "notification"
+            },
+            text: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "TTS Speak";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-tts-speak">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-engine"><i class="fa fa-tag"></i> Engine</label>
+        <input type="text" id="node-input-engine" placeholder="Engine">
+    </div>
+    <div class="form-row">
+        <label for="node-input-language"><i class="icon-tasks"></i> Language</label>
+        <input type="text" id="node-input-language" placeholder="Language">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pitch"><i class="fa fa-tag"></i> Pitch</label>
+        <input type="text" id="node-input-pitch" placeholder="Pitch">
+    </div>
+    <div class="form-row">
+        <label for="node-input-rate"><i class="fa fa-tag"></i>Rate</label>
+        <input type="text" id="node-input-rate" placeholder="Rate">
+    </div>
+    <div class="form-row">
+        <label for="node-input-stream"><i class="fa fa-unlock"></i> Stream</label>
+        <select id="node-input-stream">
+            <option value="NOTIFICATION" selected>notification</option>
+            <option value="ALARM">alarm</option>
+            <option value="MUSIC">music</option>
+            <option value="RING">ring</option>
+            <option value="SYSTEM">system</option>
+            <option value="VOICE_CALL">voice call</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-text"><i class="fa fa-tag"></i>Text</label>
+        <input type="text" id="node-input-text" placeholder="Text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-tts-speak">
+    <p>TTS Speak</p>
+    <p>Send TTS Speak to android. To send other text use msg.payload.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-vibrate', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Vibrate",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            duration: {
+                value: 1000,
+                validate: RED.validators.number()
+            },
+            force: {
+              value: false
+            }
+        },
+        oneditprepare: function() {
+          $("#node-input-keyval").spinner({
+                min: 1000
+          });
+        },
+        label: function() {
+            return this.name || "Vibrate";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-vibrate">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-duration"><i class="fa fa-random"></i> Duration MS</label>
+        <input id="node-input-duration" style="width: 60px; height: 1.7em;" value="1000">
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-force" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-force" style="width: 70%;">Force (Even in silent mode)</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-vibrate">
+    <p>Vibrate</p>
+    <p>Vibrate android phone.</p>
+    <p></p>
+</script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-sms-inbox', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "SMS Inbox",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            limit: {
+                value: 100,
+                validate: RED.validators.number()
+            },
+            offset: {
+                value: 0,
+                validate: RED.validators.number()
+            },
+            dates: {
+                value: false
+            },
+            numbers: {
+                value: false
+            }
+        },
+        label: function() {
+            return this.name || "SMS Inbox";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-sms-inbox">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-limit"><i class="icon-tasks"></i> Limit</label>
+        <input type="text" id="node-input-limit" placeholder="Limit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-offset"><i class="icon-tasks"></i> Offset</label>
+        <input type="text" id="node-input-offset" placeholder="Offset">
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-dates" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-dates" style="width: 70%;">Show Dates</label>
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-numbers" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-numbers" style="width: 70%;">Show Phone Numbers</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-sms-inbox">
+    <p>SMS Inbox</p>
+    <p>Get SMS Inbox from android.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-toast', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Toast",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            short: {
+                value: false
+            }
+        },
+        label: function() {
+            return this.name || "Toast";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-toast">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-short" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-short" style="width: 70%;">Show for a short while</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-toast">
+    <p>Toast</p>
+    <p>Send Toast to android.</p>
+    <p>The message is set on msg.payload.</p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-sms-send', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "SMS Send",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            numbers: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "SMS Send";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-sms-send">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-numbers"><i class="icon-tasks"></i> Numbers</label>
+        <input type="text" id="node-input-numbers" placeholder="Numbers">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-sms-send">
+    <p>SMS Send</p>
+    <p>Send SMS using android.</p>
+    <p>The message is set on msg.payload.</p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-share', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 0,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Share",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            action: {
+                value: "view"
+            },
+            contenttype: {
+                value: ""
+            },
+            default: {
+                value: false
+            },
+            title: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Share";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-share">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa fa-unlock"></i> Stream</label>
+        <select id="node-input-action">
+            <option value="view" selected>view</option>
+            <option value="send">send</option>
+            <option value="edit">edit</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-contenttype"><i class="icon-tasks"></i> Content-Type</label>
+        <input type="text" id="node-input-contenttype" placeholder="Content-Type">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="icon-tasks"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title">
+    </div>
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-default" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-default" style="width: 70%;">Share to the default receiver</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-share">
+    <p>Share</p>
+    <p>Share to android.</p>
+    <p></p>
+</script>

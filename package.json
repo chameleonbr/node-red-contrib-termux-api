@@ -16,9 +16,9 @@
     "nodered",
     "android"
   ],
-  "node-red":{
-    "nodes":{
-	"termux": "index.js"
+  "node-red": {
+    "nodes": {
+      "termux": "index.js"
     }
   },
   "author": "Andre Avila",
@@ -26,8 +26,5 @@
   "bugs": {
     "url": "https://github.com/chameleonbr/node-red-contrib-termux-api/issues"
   },
-  "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme",
-  "dependencies": {
-    "termux-api": "0.0.1"
-  }
+  "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme"
 }
