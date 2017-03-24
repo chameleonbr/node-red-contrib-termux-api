@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-termux-api",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Node Red flows to call termux api.",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,5 @@
     "url": "https://github.com/chameleonbr/node-red-contrib-termux-api/issues"
   },
   "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme",
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
