@@ -514,4 +514,149 @@ module.exports = function(RED) {
 
     RED.nodes.registerType("termux-share", Share);
 
+    var dnode = require('dnode');
+
+    var base64url = require('base64url');
+
+    var server = dnode({
+      call : function ( button, msgEncoded, cb) {
+        let msg = base64url.decode(msgEncoded);
+        var called = false;
+        if(button !== undefined){
+          switch (button) {
+            case 'action':
+              node.send([msg,null,null,null]);
+              called = true;
+              break;
+            case 'button1':
+              node.send([null,msg,null,null]);
+              called = true;
+              break;
+            case 'button2':
+              node.send([null,null,msg,null]);
+              called = true;
+              break;
+            case 'button3':
+              node.send([null,null,null,msg]);
+              called = true;
+              break;
+          }
+
+          cb(called);
+        }
+      }
+    });
+    server.listen(9999);
+
+
+    function Notification(n) {
+      RED.nodes.createNode(this, n);
+
+      this.name = n.name;
+      this.topic = n.topic;
+      this.content = n.content;
+      this.title = n.title;
+
+      this.action = n.action;
+      this.actionclose = n.actionclose;
+
+      this.button1 = n.button1;
+      this.button1close = n.button1close;
+
+      this.button2 = n.button2;
+      this.button2close = n.button2close;
+
+      this.button3 = n.button3;
+      this.button3close = n.button3close;
+
+      //this.ledcolor = n.ledcolor; // color of the blinking led as RRGGBB (default: none)
+      //this.ledon = n.ledon; // number of milliseconds for the LED to be on while it's flashing (default: 800)
+      //this.ledoff = n.ledoff; // number of milliseconds for the LED to be off while it's flashing (default: 800)
+
+      this.sound  = n.sound; // play a sound with the notification
+
+      this.priority = n.priority; // notification priority (high/low/max/min/default)
+
+      this.vibrate  = n.vibrate; // vibrate pattern, comma separated as in 500,1000,200
+
+      var node = this;
+
+      node.on('input', function(msg) {
+
+        let content = (!!msg.payload)?(msg.payload):(node.content);
+        let title = (!!msg.title)?(msg.title):(node.title);
+
+        var opts = [];
+
+        if(!!content){
+          opts.push('--content',content);
+        }
+
+        if(!!id){
+          opts.push('--id',msg._msgid);
+        }
+
+        if(!!title){
+          opts.push('--title',title);
+        }
+
+        const nodeTermuxCall = 'node ~/.node-red/node_modules/node-red-contrib-termux-api/red_termux.js';
+
+        const closeCmd = 'termux-notification-remove '+msg._msgid;
+
+        if(!!node.action){
+          let actionClose = (node.actionclose)?(closeCmd):('');
+          let actionCmd = nodeTermuxCall+' action "'+base64url.encode(msg) + '";' + actionClose;
+          opts.push('--action',actionCmd);
+        }
+
+        if(!!node.button1){
+          let button1Close = (node.button1close)?(closeCmd):('');
+          let button1Cmd = nodeTermuxCall+' button1 "'+base64url.encode(msg) + '";' + button1Close;
+          opts.push('--button1',button1);
+          opts.push('--button1-action',button1Cmd);
+        }
+
+        if(!!node.button2){
+          let button2Close = (node.button2close)?(closeCmd):('');
+          let button2Cmd = nodeTermuxCall+' button2 "'+base64url.encode(msg) + '";' + button2Close;
+          opts.push('--button2',button2);
+          opts.push('--button2-action',button2Cmd);
+        }
+
+        if(!!node.button3){
+          let button3Close = (node.button3close)?(closeCmd):('');
+          let button3Cmd = nodeTermuxCall+' button3 "'+base64url.encode(msg) + '";' + button3Close;
+          opts.push('--button3',button3);
+          opts.push('--button3-action',button3Cmd);
+        }
+/*
+        if(!!node.led_color){
+          opts.push('--led-color',node.led_color);
+          if(!!node.led_on){
+            opts.push('--led-on',node.led_on);
+          }
+          if(!!node.led_off){
+            opts.push('--led-off',node.led_off);
+          }
+        }
+*/
+        if(!!node.priority){
+          opts.push('--priority',node.priority);
+        }
+
+        if(!!node.sound){
+          opts.push('--sound');
+        }
+
+        if(!!node.vibrate){
+          opts.push('--vibrate',node.vibrate);
+        }
+
+        termux.exec('termux-notification',opts,termux.VOID).catch(function(err){
+          node.error(err);
+        });
+      });
+    }
+    RED.nodes.registerType("termux-notification", Notification);
 };

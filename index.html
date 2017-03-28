@@ -969,3 +969,151 @@
     <p>Share to android.</p>
     <p></p>
 </script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-notification', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 4,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        align: "right",
+        paletteLabel: "Notification",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            },
+            nid: {
+                value: ""
+            },
+            title: {
+                value: ""
+            },
+            content: {
+                value: ""
+            },
+            action: {
+                value: ""
+            },
+            actionclose: {
+                value: false
+            },
+            button1: {
+                value: ""
+            },
+            button1close: {
+                value: false
+            },
+            button2: {
+                value: ""
+            },
+            button2close: {
+                value: false
+            },
+            button3: {
+                value: ""
+            },
+            button3close: {
+                value: false
+            },
+            /*ledcolor: {
+                value: ""
+            },
+            ledon: {
+                value: ""
+            },
+            ledoff: {
+                value: ""
+            },*/
+            priority: {
+                value: ""
+            },
+            sound: {
+                value: false
+            },
+            vibrate: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Notification";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-notification">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="icon-tasks"></i> Title</label>
+        <input type="text" id="node-input-title" placeholder="Title">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-content"><i class="icon-tasks"></i> Content</label>
+        <input type="text" id="node-input-content" placeholder="Content">
+    </div>
+
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-actionclose" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-actionclose" style="width: 70%;">Close after Call action</label>
+    </div>
+
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-button1close" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-button1close" style="width: 70%;">Close after Call button1</label>
+    </div>
+
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-button2close" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-button2close" style="width: 70%;">Close after Call button2</label>
+    </div>
+
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-button3close" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-button3close" style="width: 70%;">Close after Call button3</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-priority"><i class="fa fa-unlock"></i> Priority</label>
+        <select id="node-input-priority">
+            <option value="default" selected>Default</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+            <option value="max">Max</option>
+            <option value="min">Min</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-sound" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-sound" style="width: 70%;">Sound</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-vibrate"><i class="fa fa-tag"></i> Vibrate pattern</label>
+        <input type="text" id="node-input-vibrate" placeholder="Vibrate pattern, comma separated as in 500,1000,200">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-notification">
+    <p>Notification</p>
+    <p>Send Notification to android.</p>
+    <p></p>
+</script>
