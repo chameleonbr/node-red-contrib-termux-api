@@ -18,7 +18,8 @@
   ],
   "node-red": {
     "nodes": {
-      "termux": "index.js"
+      "termux": "index.js",
+      "notification": "notification.js"
     }
   },
   "author": "Andre Avila",
@@ -27,5 +28,7 @@
     "url": "https://github.com/chameleonbr/node-red-contrib-termux-api/issues"
   },
   "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme",
-  "dependencies": {}
+  "dependencies": {
+    "dnode": "^1.2.2"
+  }
 }
