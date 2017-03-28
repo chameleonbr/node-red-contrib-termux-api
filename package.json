@@ -29,6 +29,6 @@
   "homepage": "https://github.com/chameleonbr/node-red-contrib-termux-api#readme",
   "dependencies": {
     "base64url": "^2.0.0",
-    "dnode": "^1.2.2"
+    "ws": "^2.2.2"
   }
 }
