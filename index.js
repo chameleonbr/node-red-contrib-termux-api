@@ -587,14 +587,12 @@ module.exports = function(RED) {
 
       node.on('input', function(msg) {
 
-        let content = (!!msg.payload)?(msg.payload):(node.content);
-        let title = (!!msg.title)?(msg.title):(node.title);
+        let content = (!!node.content)?(node.content):((msg.payload)?(msg.payload):(''));
+        let title = (!!node.title)?(node.title):((msg.title)?(msg.title):(''));
 
         var opts = [];
 
-        if(!!content){
-          opts.push('--content',content);
-        }
+        opts.push('--content',content);
 
         if(!!msg._msgid){
           opts.push('--id',msg._msgid);
@@ -609,7 +607,9 @@ module.exports = function(RED) {
         const closeCmd = 'termux-notification-remove '+msg._msgid;
 
         if(!!node.action){
-          let actionCmd = nodeTermuxCall + ' ' + node.id + ' action "'+base64url.encode(mesg);
+          msg.label = 'action';
+          let mesg = JSON.stringify(msg);
+          let actionCmd = nodeTermuxCall + ' ' + node.id + ' action "'+base64url.encode(mesg)+'"';
           opts.push('--action',actionCmd);
         }
 
