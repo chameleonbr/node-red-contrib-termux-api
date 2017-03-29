@@ -1129,3 +1129,84 @@
     <p>Send Notification to android.</p>
     <p></p>
 </script>
+
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-wifi-connectioninfo', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Wifi Info",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Wifi Info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-wifi-connectioninfo">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-wifi-connectioninfo">
+    <p>Wifi Info</p>
+    <p>Get wifi connection info from Android device.</p>
+    <p></p>
+</script>
+
+<script type="text/javascript">
+    /*global RED*/
+    RED.nodes.registerType('termux-wifi-scaninfo', {
+        category: 'termux',
+        inputs: 1,
+        outputs: 1,
+        color: "#ffaaaa",
+        icon: "serial.png",
+        paletteLabel: "Wifi Scan",
+        defaults: {
+            name: {
+                value: ""
+            },
+            topic: {
+                value: ""
+            }
+        },
+        label: function() {
+            return this.name || "Wifi Scan";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="termux-wifi-scaninfo">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tasks"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="termux-wifi-scaninfo">
+    <p>Wifi Scan</p>
+    <p>Get wifi scanned networks from Android device.</p>
+    <p></p>
+</script>

@@ -671,4 +671,43 @@ module.exports = function(RED) {
       }
     }
     RED.nodes.registerType("termux-notification", Notification);
+
+    function WifiInfo(n) {
+        RED.nodes.createNode(this, n);
+        this.name = n.name;
+        this.topic = n.topic;
+        var node = this;
+
+        node.on('input', function(msg) {
+          termux.exec('termux-wifi-connectioninfo').then(function(data){
+            msg.payload = data;
+            node.send(msg);
+          }).catch(function(err){
+            node.error(err);
+          });
+        });
+    }
+
+    RED.nodes.registerType("termux-wifi-connectioninfo", WifiInfo);
+
+    function WifiScan(n) {
+        RED.nodes.createNode(this, n);
+        this.name = n.name;
+        this.topic = n.topic;
+        var node = this;
+
+        node.on('input', function(msg) {
+          termux.exec('termux-wifi-scaninfo').then(function(data){
+            msg.payload = data;
+            node.send(msg);
+          }).catch(function(err){
+            node.error(err);
+          });
+        });
+    }
+
+    RED.nodes.registerType("termux-wifi-scaninfo", WifiScan);
 };
+
+
+
