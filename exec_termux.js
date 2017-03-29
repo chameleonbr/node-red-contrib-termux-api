@@ -22,6 +22,8 @@ const execTermux = function (cmd, opts, parser) {
   }
   return new Promise(function (resolve, reject) {
     child_process.execFile(cmd, opts, function (err, out, code) {
+
+      console.log('Command:',cmd,opts);
       try{
         var res = parser(out);
         if (typeof res === 'object' && res.error !== undefined) {

@@ -514,42 +514,47 @@ module.exports = function(RED) {
 
     RED.nodes.registerType("termux-share", Share);
 
-    var dnode = require('dnode');
-
     var base64url = require('base64url');
 
-    var server = dnode({
-      call : function ( button, msgEncoded, cb) {
-        let msg = base64url.decode(msgEncoded);
-        var called = false;
+    const WebSocket = require('ws');
+    const wss = new WebSocket.Server({
+      port: 9999
+    });
+
+    wss.on('connection', function connection(ws) {
+      ws.on('message', function incoming(message) {
+        let mesg = JSON.parse(message);
+        let node = RED.nodes.getNode(mesg.nid);
+        let button = mesg.button;
+        let msgEncoded = mesg.msg;
+        let msg = JSON.parse(base64url.decode(msgEncoded));
+        msg.button = button;
+        let called = false;
         if(button !== undefined){
           switch (button) {
             case 'action':
-              node.send([msg,null,null,null]);
+              node.send(msg);
               called = true;
               break;
             case 'button1':
-              node.send([null,msg,null,null]);
+              node.send(msg);
               called = true;
               break;
             case 'button2':
-              node.send([null,null,msg,null]);
+              node.send(msg);
               called = true;
               break;
             case 'button3':
-              node.send([null,null,null,msg]);
+              node.send(msg);
               called = true;
               break;
           }
-
-          cb(called);
-        }
       }
+      });
     });
-    server.listen(9999);
-
 
     function Notification(n) {
+      try{
       RED.nodes.createNode(this, n);
 
       this.name = n.name;
@@ -558,7 +563,6 @@ module.exports = function(RED) {
       this.title = n.title;
 
       this.action = n.action;
-      this.actionclose = n.actionclose;
 
       this.button1 = n.button1;
       this.button1close = n.button1close;
@@ -592,7 +596,7 @@ module.exports = function(RED) {
           opts.push('--content',content);
         }
 
-        if(!!id){
+        if(!!msg._msgid){
           opts.push('--id',msg._msgid);
         }
 
@@ -605,32 +609,37 @@ module.exports = function(RED) {
         const closeCmd = 'termux-notification-remove '+msg._msgid;
 
         if(!!node.action){
-          let actionClose = (node.actionclose)?(closeCmd):('');
-          let actionCmd = nodeTermuxCall+' action "'+base64url.encode(msg) + '";' + actionClose;
+          let actionCmd = nodeTermuxCall + ' ' + node.id + ' action "'+base64url.encode(mesg);
           opts.push('--action',actionCmd);
         }
 
         if(!!node.button1){
           let button1Close = (node.button1close)?(closeCmd):('');
-          let button1Cmd = nodeTermuxCall+' button1 "'+base64url.encode(msg) + '";' + button1Close;
-          opts.push('--button1',button1);
+          msg.label = node.button1;
+          let mesg = JSON.stringify(msg);
+          let button1Cmd = nodeTermuxCall+ ' ' + node.id + ' button1 "'+base64url.encode(mesg) + '";' + button1Close;
+          opts.push('--button1',node.button1);
           opts.push('--button1-action',button1Cmd);
         }
 
         if(!!node.button2){
+          msg.label = node.button2;
+          let mesg = JSON.stringify(msg);
           let button2Close = (node.button2close)?(closeCmd):('');
-          let button2Cmd = nodeTermuxCall+' button2 "'+base64url.encode(msg) + '";' + button2Close;
-          opts.push('--button2',button2);
+          let button2Cmd = nodeTermuxCall+ ' ' + node.id + ' button2 "'+base64url.encode(mesg) + '";' + button2Close;
+          opts.push('--button2',node.button2);
           opts.push('--button2-action',button2Cmd);
         }
 
         if(!!node.button3){
+          msg.label = node.button3;
+          let mesg = JSON.stringify(msg);
           let button3Close = (node.button3close)?(closeCmd):('');
-          let button3Cmd = nodeTermuxCall+' button3 "'+base64url.encode(msg) + '";' + button3Close;
-          opts.push('--button3',button3);
+          let button3Cmd = nodeTermuxCall+ ' ' + node.id + ' button3 "'+base64url.encode(mesg) + '";' + button3Close;
+          opts.push('--button3',node.button3);
           opts.push('--button3-action',button3Cmd);
         }
-/*
+
         if(!!node.led_color){
           opts.push('--led-color',node.led_color);
           if(!!node.led_on){
@@ -640,7 +649,7 @@ module.exports = function(RED) {
             opts.push('--led-off',node.led_off);
           }
         }
-*/
+
         if(!!node.priority){
           opts.push('--priority',node.priority);
         }
@@ -657,6 +666,9 @@ module.exports = function(RED) {
           node.error(err);
         });
       });
+      }catch(e){
+        console.log(e);
+      }
     }
     RED.nodes.registerType("termux-notification", Notification);
 };

@@ -976,7 +976,7 @@
     RED.nodes.registerType('termux-notification', {
         category: 'termux',
         inputs: 1,
-        outputs: 4,
+        outputs: 1,
         color: "#ffaaaa",
         icon: "serial.png",
         align: "right",
@@ -998,9 +998,6 @@
                 value: ""
             },
             action: {
-                value: ""
-            },
-            actionclose: {
                 value: false
             },
             button1: {
@@ -1067,8 +1064,13 @@
 
     <div class="form-row">
         <label>&nbsp;</label>
-        <input type="checkbox" id="node-input-actionclose" style="display: inline-block; width: auto; vertical-align: top;">
-        <label for="node-input-actionclose" style="width: 70%;">Close after Call action</label>
+        <input type="checkbox" id="node-input-action" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-action" style="width: 70%;">Action Trigger</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-button1"><i class="icon-tasks"></i> Button 1</label>
+        <input type="text" id="node-input-button1" placeholder="Button 1">
     </div>
 
     <div class="form-row">
@@ -1078,9 +1080,19 @@
     </div>
 
     <div class="form-row">
+        <label for="node-input-button2"><i class="icon-tasks"></i> Button 2</label>
+        <input type="text" id="node-input-button2" placeholder="Button 2">
+    </div>
+
+    <div class="form-row">
         <label>&nbsp;</label>
         <input type="checkbox" id="node-input-button2close" style="display: inline-block; width: auto; vertical-align: top;">
         <label for="node-input-button2close" style="width: 70%;">Close after Call button2</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-button3"><i class="icon-tasks"></i> Button 3</label>
+        <input type="text" id="node-input-button3" placeholder="Button 3">
     </div>
 
     <div class="form-row">
