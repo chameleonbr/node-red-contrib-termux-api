@@ -433,7 +433,7 @@ module.exports = function(RED) {
             opts.push('-o',offset);
           }
 
-          termux.exec('termux-sms-inbox',opts).then(function(data){
+          termux.exec('termux-sms-list',opts).then(function(data){
             msg.payload = data;
             node.send(msg);
           }).catch(function(err){
