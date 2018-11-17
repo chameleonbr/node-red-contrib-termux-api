@@ -1,11 +1,16 @@
-# node-red-contrib-termux-api
-Node Red flows to call termux api on Android devices.
+# A termux API node for Node-red
+Node-red-contrib-termux-api is a node-red node util to call termux API on Android devices.
 
-How to install NodeJS on Android
+## How to install
+First you need to install NodeJS on Android
+
 https://medium.freecodecamp.com/building-a-node-js-application-on-android-part-1-termux-vim-and-node-js-dfa90c28958f#.pzbrth56q
 
-and after:
+including termux and termux API (available at https://termux.com/)
 
-npm install -g --unsafe-perm node-red
+After that you can install node-red and this node using the following commands:
+`npm install -g --unsafe-perm node-red`
+`npm install -g node-red-contrib-termux-api`
 
-Termux API: https://termux.com/add-on-api.html
+## References 
+Termux API: https://wiki.termux.com/wiki/Termux:API
